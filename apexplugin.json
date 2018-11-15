@@ -3,9 +3,9 @@
   "version" : "1.0",
   "description" : "This plugin is a javascript barcode reader region plugin for use in Oracle Application Express",
   "keywords" : ["barcode", "region", "reader", "barcode reader"],
-  "homepage" : "https://github.com/Dani3lSun/apex-plugin-guidedtour",
+  "homepage" : "https://github.com/s1m0nB/apex-plugin-apexbcreader",
   "bugs" : {
-    "url" : "https://github.com/s1m0nB/apex-plugin/tree/master/apexbcreader",
+    "url" : "https://github.com/s1m0nB/apex-plugin-apexbcreader/issues",
     "email" : "simon.boorsma@gmail.com"
   },
   "license" : "MIT",
@@ -16,7 +16,7 @@
   },
   "repository" : {
     "type" : "git",
-    "url" : "https://github.com/s1m0nB/apex-plugin"
+    "url" : "https://github.com/s1m0nB/apex-plugin-apexbcreader"
   },
  "oracle" : {
     "versions" : ["11.2.0.1", "12.1.0.1"],
