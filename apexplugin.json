@@ -21,7 +21,7 @@
  "oracle" : {
     "versions" : ["11.2.0.1", "12.1.0.1"],
     "apex" : {
-      "versions" : ["5.0.0","5.1.0","18.1","18.2"],
+      "versions" : ["18.2"],
       "plugin" : {
         "internalName" : "APEXBCREADER",
         "type" : "region",
