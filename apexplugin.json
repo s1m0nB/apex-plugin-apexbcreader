@@ -25,6 +25,7 @@
       "plugin" : {
         "internalName" : "APEXBCREADER",
         "type" : "region",
+        "demo" : "https://apex.oracle.com/pls/apex/f?p=35723",
         "previewImage" : "https://4.bp.blogspot.com/-lLIrxTrxre0/W-2QtVt3yUI/AAAAAAAAKKo/K4Iy0-tm6swxWcWYIZn79rQrdt8HKmO3gCEwYBhgL/s640/APEX_result.png"
       }
     }
