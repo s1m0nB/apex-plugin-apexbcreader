@@ -24,7 +24,7 @@ end;
 prompt --application/shared_components/plugins/region_type/apexbcreader
 begin
 wwv_flow_api.create_plugin(
- p_id=>wwv_flow_api.id(9796034528010965705)
+ p_id=>wwv_flow_api.id(20284327835572521574)
 ,p_plugin_type=>'REGION TYPE'
 ,p_name=>'APEXBCREADER'
 ,p_display_name=>'BarcodeReader'
@@ -64,13 +64,13 @@ wwv_flow_api.create_plugin(
 'The barcode reader will analyze the image and the value of barcode is read with the event ''apexbcreader''. ',
 'You can use a Dynamic Action on this event to process this value further.'))
 ,p_version_identifier=>'1.0'
-,p_about_url=>'https://github.com/s1m0nB/apex-plugin/tree/master/apexbcreader'
+,p_about_url=>'https://github.com/s1m0nB/apex-plugin/tree/master/apexbcreaderhttps://github.com/s1m0nB/apex-plugin-apexbcreaderhttps://github.com/s1m0nB/apex-plugin-apexbcreader'
 ,p_plugin_comment=>'v1.0 - 2018-11-15 by s1m0nB'
 ,p_files_version=>5
 );
 wwv_flow_api.create_plugin_event(
- p_id=>wwv_flow_api.id(10153655253536284923)
-,p_plugin_id=>wwv_flow_api.id(9796034528010965705)
+ p_id=>wwv_flow_api.id(20641948561097840792)
+,p_plugin_id=>wwv_flow_api.id(20284327835572521574)
 ,p_name=>'apexbcreader'
 ,p_display_name=>'apexbcreader'
 );
@@ -111,8 +111,8 @@ end;
 /
 begin
 wwv_flow_api.create_plugin_file(
- p_id=>wwv_flow_api.id(10151640130015194519)
-,p_plugin_id=>wwv_flow_api.id(9796034528010965705)
+ p_id=>wwv_flow_api.id(20639933437576750388)
+,p_plugin_id=>wwv_flow_api.id(20284327835572521574)
 ,p_file_name=>'apexbcr/apexbcreader.js'
 ,p_mime_type=>'text/javascript'
 ,p_file_charset=>'utf-8'
@@ -265,8 +265,8 @@ end;
 /
 begin
 wwv_flow_api.create_plugin_file(
- p_id=>wwv_flow_api.id(10151640464195194522)
-,p_plugin_id=>wwv_flow_api.id(9796034528010965705)
+ p_id=>wwv_flow_api.id(20639933771756750391)
+,p_plugin_id=>wwv_flow_api.id(20284327835572521574)
 ,p_file_name=>'apexbcr/barcodereader.js'
 ,p_mime_type=>'text/javascript'
 ,p_file_charset=>'utf-8'
@@ -1037,8 +1037,8 @@ end;
 /
 begin
 wwv_flow_api.create_plugin_file(
- p_id=>wwv_flow_api.id(10151640853745194524)
-,p_plugin_id=>wwv_flow_api.id(9796034528010965705)
+ p_id=>wwv_flow_api.id(20639934161306750393)
+,p_plugin_id=>wwv_flow_api.id(20284327835572521574)
 ,p_file_name=>'apexbcr/decoderworker.js'
 ,p_mime_type=>'text/javascript'
 ,p_file_charset=>'utf-8'
@@ -1307,8 +1307,8 @@ end;
 /
 begin
 wwv_flow_api.create_plugin_file(
- p_id=>wwv_flow_api.id(10151641254209194526)
-,p_plugin_id=>wwv_flow_api.id(9796034528010965705)
+ p_id=>wwv_flow_api.id(20639934561770750395)
+,p_plugin_id=>wwv_flow_api.id(20284327835572521574)
 ,p_file_name=>'apexbcr/exif.js'
 ,p_mime_type=>'text/javascript'
 ,p_file_charset=>'utf-8'
