@@ -64,7 +64,7 @@ wwv_flow_api.create_plugin(
 'The barcode reader will analyze the image and the value of barcode is read with the event ''apexbcreader''. ',
 'You can use a Dynamic Action on this event to process this value further.'))
 ,p_version_identifier=>'1.0'
-,p_about_url=>'https://github.com/s1m0nB/apex-plugin/tree/master/apexbcreaderhttps://github.com/s1m0nB/apex-plugin-apexbcreaderhttps://github.com/s1m0nB/apex-plugin-apexbcreader'
+,p_about_url=>'https://github.com/s1m0nB/apex-plugin-apexbcreader'
 ,p_plugin_comment=>'v1.0 - 2018-11-15 by s1m0nB'
 ,p_files_version=>5
 );
