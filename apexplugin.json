@@ -3,7 +3,7 @@
   "version" : "1.0",
   "description" : "This plugin is a javascript barcode reader region plugin for use in Oracle Application Express",
   "keywords" : ["oracle", "apex", "plugin","barcode", "region", "reader", "barcode reader"],
-  "homepage" : "https://eocoe.blogspot.com/2018/11/a-barcode-reader-for-apex.html",
+  "homepage" : "https://github.com/s1m0nB/apex-plugin-apexbcreader",
   "bugs" : {
     "url" : "https://github.com/s1m0nB/apex-plugin-apexbcreader/issues",
     "email" : "simon.boorsma@gmail.com"
@@ -12,7 +12,7 @@
   "author" : {
     "name" : "Simon Boorsma",
     "email" : "simon.boorsma@gmail.com",
-    "url" : "https://eocoe.blogspot.com/"
+    "url" : "https://eocoe.blogspot.com/2018/11/a-barcode-reader-for-apex.html"
   },
   "repository" : {
     "type" : "git",
