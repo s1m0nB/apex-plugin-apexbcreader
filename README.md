@@ -11,7 +11,10 @@ The PlugIn can be used in APEX as a region. it uses the html5 <video> capabiltie
 The barcode reader will analyze the image and the value of barcode is read with the event 'apexbcreader'. 
 You can use a Dynamic Action on this event to process this value further.
 
-## reference
+## references
+
+https://apex.oracle.com/pls/apex/f?p=35723:10
+
 https://eocoe.blogspot.com/2018/11/a-barcode-reader-for-apex.html
 
 https://github.com/EddieLa/JOB
