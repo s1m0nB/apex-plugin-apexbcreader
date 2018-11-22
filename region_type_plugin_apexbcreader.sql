@@ -42,15 +42,35 @@ wwv_flow_api.create_plugin(
 'return apex_plugin.t_region_render_result',
 'is',
 '    -- constants',
-'    c_video_id    varchar2(100) := ''bcreaderVideo'';',
-'    c_canvas_id   varchar2(100) := ''bcreaderVideoCanvas'';',
+'    c_video_id      varchar2(100) := ''bcreaderVideo'';',
+'    c_canvas_id     varchar2(100) := ''bcreaderVideoCanvas'';',
+'    -- attributes',
+'    l_decodeFormats varchar2(32676) := p_region.attribute_01;',
+'    l_facingMode    varchar2(32676) := p_region.attribute_02;',
+'    --',
+'    l_jscode        varchar2(32676) := '''';',
+'    l_jsarray       varchar2(32676) := '''';',
 '    -- dummy result',
 '    l_result      apex_plugin.t_region_render_result;',
 'begin',
 '    -- render the html',
 '    htp.p(''<canvas id="''||c_canvas_id||''" width="320" height="240"> <video id ="''||c_video_id||''"/></canvas>'');',
+'    -- check custom attributes',
+'    if l_facingMode is not null',
+'    then',
+'        -- set camera facingMode',
+'        l_jscode := l_jscode || ''ApExBCReader.SetFacingMode(''''''||l_facingMode||'''''');''; ',
+'    end if;',
+'    if l_decodeFormats is not null',
+'    then',
+'        -- set the configured formats',
+'        -- construct js array',
+'        l_jsarray := ''["'' || replace(l_decodeFormats,'':'',''", "'') || ''"]'';',
+'        l_jscode := l_jscode || ''ApExBCReader.SetDecodeFormats(''''''||l_jsarray||'''''');''; ',
+'    end if;',
 '    -- init javascript ApExBCReader',
-'    apex_javascript.add_inline_code( p_code => ''ApExBCReader.Init();''',
+'    apex_debug.info(''custom js : ''||l_jscode);',
+'    apex_javascript.add_inline_code( p_code => l_jscode || ''ApExBCReader.Init();''',
 '                                   , p_key  => ''apexbcr_plugin'' );',
 '    -- ',
 '    return l_result;',
@@ -65,8 +85,100 @@ wwv_flow_api.create_plugin(
 'You can use a Dynamic Action on this event to process this value further.'))
 ,p_version_identifier=>'1.0'
 ,p_about_url=>'https://github.com/s1m0nB/apex-plugin-apexbcreader'
-,p_plugin_comment=>'v1.0 - 2018-11-15 by s1m0nB'
+,p_plugin_comment=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'v1.1 - 2018-11-22 - added 2 attributes for setting facingMode and decodeFormats',
+'v1.0 - 2018-11-15 by s1m0nB'))
 ,p_files_version=>5
+);
+wwv_flow_api.create_plugin_attribute(
+ p_id=>wwv_flow_api.id(12630383102605003974)
+,p_plugin_id=>wwv_flow_api.id(20284327835572521574)
+,p_attribute_scope=>'COMPONENT'
+,p_attribute_sequence=>1
+,p_display_sequence=>10
+,p_prompt=>'DecodeFormats'
+,p_attribute_type=>'CHECKBOXES'
+,p_is_required=>false
+,p_supported_ui_types=>'DESKTOP'
+,p_is_translatable=>false
+,p_lov_type=>'STATIC'
+);
+wwv_flow_api.create_plugin_attr_value(
+ p_id=>wwv_flow_api.id(12630483679947005846)
+,p_plugin_attribute_id=>wwv_flow_api.id(12630383102605003974)
+,p_display_sequence=>10
+,p_display_value=>'Code128'
+,p_return_value=>'Code128'
+);
+wwv_flow_api.create_plugin_attr_value(
+ p_id=>wwv_flow_api.id(12630560056834004732)
+,p_plugin_attribute_id=>wwv_flow_api.id(12630383102605003974)
+,p_display_sequence=>20
+,p_display_value=>'Code93'
+,p_return_value=>'Code93'
+,p_help_text=>'Code93'
+);
+wwv_flow_api.create_plugin_attr_value(
+ p_id=>wwv_flow_api.id(12630791644268007234)
+,p_plugin_attribute_id=>wwv_flow_api.id(12630383102605003974)
+,p_display_sequence=>30
+,p_display_value=>'Code39'
+,p_return_value=>'Code39'
+,p_help_text=>'Code39'
+);
+wwv_flow_api.create_plugin_attr_value(
+ p_id=>wwv_flow_api.id(12630963480922006366)
+,p_plugin_attribute_id=>wwv_flow_api.id(12630383102605003974)
+,p_display_sequence=>40
+,p_display_value=>'EAN-13'
+,p_return_value=>'EAN-13'
+);
+wwv_flow_api.create_plugin_attr_value(
+ p_id=>wwv_flow_api.id(12631006330214007033)
+,p_plugin_attribute_id=>wwv_flow_api.id(12630383102605003974)
+,p_display_sequence=>50
+,p_display_value=>'2Of5'
+,p_return_value=>'2Of5'
+);
+wwv_flow_api.create_plugin_attr_value(
+ p_id=>wwv_flow_api.id(12631034676414007580)
+,p_plugin_attribute_id=>wwv_flow_api.id(12630383102605003974)
+,p_display_sequence=>60
+,p_display_value=>'Inter2Of5'
+,p_return_value=>'Inter2Of5'
+);
+wwv_flow_api.create_plugin_attr_value(
+ p_id=>wwv_flow_api.id(12631076514966008271)
+,p_plugin_attribute_id=>wwv_flow_api.id(12630383102605003974)
+,p_display_sequence=>70
+,p_display_value=>'Codabar'
+,p_return_value=>'Codabar'
+);
+wwv_flow_api.create_plugin_attribute(
+ p_id=>wwv_flow_api.id(12631354820146014812)
+,p_plugin_id=>wwv_flow_api.id(20284327835572521574)
+,p_attribute_scope=>'COMPONENT'
+,p_attribute_sequence=>2
+,p_display_sequence=>20
+,p_prompt=>'FacingMode'
+,p_attribute_type=>'SELECT LIST'
+,p_is_required=>false
+,p_is_translatable=>false
+,p_lov_type=>'STATIC'
+);
+wwv_flow_api.create_plugin_attr_value(
+ p_id=>wwv_flow_api.id(12631435523347015721)
+,p_plugin_attribute_id=>wwv_flow_api.id(12631354820146014812)
+,p_display_sequence=>10
+,p_display_value=>'environment'
+,p_return_value=>'environment'
+);
+wwv_flow_api.create_plugin_attr_value(
+ p_id=>wwv_flow_api.id(12631747363658019022)
+,p_plugin_attribute_id=>wwv_flow_api.id(12631354820146014812)
+,p_display_sequence=>20
+,p_display_value=>'user'
+,p_return_value=>'user'
 );
 wwv_flow_api.create_plugin_event(
  p_id=>wwv_flow_api.id(20641948561097840792)
