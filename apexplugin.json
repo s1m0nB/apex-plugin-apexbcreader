@@ -1,6 +1,6 @@
 {
   "name" : "APEX Barcode Reader",
-  "version" : "1.0",
+  "version" : "1.1",
   "description" : "This plugin is a javascript barcode reader region plugin for use in Oracle Application Express",
   "keywords" : ["oracle", "apex", "plugin","barcode", "region", "reader", "barcode reader"],
   "homepage" : "https://github.com/s1m0nB/apex-plugin-apexbcreader",
