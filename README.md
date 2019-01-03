@@ -1,4 +1,4 @@
-[![APEX Plugin](https://cdn.rawgit.com/Dani3lSun/apex-github-badges/b7e95341/badges/apex-plugin-badge.svg)](<LINK>)
+[![APEX Plugin](https://cdn.rawgit.com/Dani3lSun/apex-github-badges/b7e95341/badges/apex-plugin-badge.svg)](https://eocoe.blogspot.com/2018/11/a-barcode-reader-for-apex.html)
 APEX PlugIn: APEXBCREADER
 =========================
 
