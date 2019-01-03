@@ -1,3 +1,4 @@
+[![APEX Plugin](https://cdn.rawgit.com/Dani3lSun/apex-github-badges/b7e95341/badges/apex-plugin-badge.svg)](<LINK>)
 APEX PlugIn: APEXBCREADER
 =========================
 
